@@ -1,0 +1,109 @@
+/* https://github.com/duckduckgo/duckduckgo-styles/blob/master/icons/font/ddg-serp-icons.ttf */
+@font-face {
+  font-family: "ddg-serp-icons";
+  src: URL("ddg-serp-icons.ttf") format("truetype");
+}
+
+:root {
+  --BACKGROUND-COLOR: #1a1a1a;
+  --BORDER-RADIUS: 5px;
+  --FONT-COLOR: white;
+  --FONT-SIZE: 16px;
+  --SEARCH-BACKGROUND: #333333;
+  --SEARCH-BACKGROUND-HOVER: #444444;
+  --SEARCH-BUTTON-MIN-WIDTH: 50px;
+  --SEARCH-HEIGHT: 45px;
+  --SEARCH-ICON-COLOR: #999999;
+  --SEARCH-ICON-COLOR-HOVER: #cccccc;
+  --SEARCH-MARGIN-BOTTOM: 40px;
+  --SEARCH-MARGIN-TOP: 20px;
+  --TAG-A-COLOR: #63c0f5;
+}
+
+body {
+  background-color: var(--BACKGROUND-COLOR);
+  font-family: sans-serif;
+}
+
+p {
+  color: var(--FONT-COLOR);
+  font-size: var(--FONT-SIZE);
+}
+
+a {
+  text-decoration: none;
+  color: var(--TAG-A-COLOR);
+}
+
+.hidden {
+  display: none;
+}
+
+.title {
+  color: #ce8989;
+  font-size: 12px;
+}
+
+.searchWrap {
+  position: relative;
+  width: 40%;
+  margin-top: 1px;
+  margin-top: var(--SEARCH-MARGIN-TOP);
+  margin-bottom: var(--SEARCH-MARGIN-BOTTOM);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchBar {
+  background: var(--SEARCH-BACKGROUND);
+  border: 1px solid var(--SEARCH-BACKGROUND-HOVER);
+  padding-left: 0.75em;
+  padding-right: 3.5em;
+  border-radius: var(--BORDER-RADIUS);
+}
+
+.searchInput {
+  width: 100%;
+  line-height: var(--SEARCH-HEIGHT);
+  font-size: 1.1em;
+  background: none;
+  border: none;
+  color: var(--FONT-COLOR);
+}
+
+.searchButton {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 2px;
+  left: auto;
+  min-width: var(--SEARCH-BUTTON-MIN-WIDTH);
+  font-size: 1.25em;
+  margin-right: -3px;
+  background-color: transparent;
+  color: var(--SEARCH-ICON-COLOR);
+  font-family: "ddg-serp-icons";
+  border-radius: 0 var(--BORDER-RADIUS) var(--BORDER-RADIUS) 0;
+}
+
+.searchInput:focus,
+.searchButton:focus {
+  outline: none;
+}
+
+/* https://stackoverflow.com/questions/22061454/change-style-of-an-element-when-focus-is-another-element */
+.searchInput:focus + .searchButton,
+.searchInput:hover + .searchButton,
+.searchButton:focus,
+.searchButton:hover {
+  background: var(--SEARCH-BACKGROUND-HOVER);
+  color: var(--SEARCH-ICON-COLOR-HOVER);
+}
+
+@media screen and (max-width: 930px) {
+  .searchWrap {
+    width: 80%;
+  }
+}
