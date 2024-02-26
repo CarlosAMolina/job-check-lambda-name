@@ -75,9 +75,9 @@ function has_allowed_size(string) {
   return string.length <= MAX_ALLOWED_LENGTH;
 }
 
-// TODO uncomment for testing
-export const exportedForTesting = {
-  show_string_analysis,
-  get_string_modified_by_deploy_pipe,
-  has_allowed_size,
-};
+//// TODO uncomment for testing
+//export const exportedForTesting = {
+//  show_string_analysis,
+//  get_string_modified_by_deploy_pipe,
+//  has_allowed_size,
+//};
