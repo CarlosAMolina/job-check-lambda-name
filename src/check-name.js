@@ -29,6 +29,7 @@ function run_input_query() {
 function getResultHtml(searchTerm) {
   const modified_string = get_string_modified_by_deploy_pipe(searchTerm);
   const is_valid = has_allowed_size(modified_string);
+  const is_valid_html = getBoolHtml(is_valid);
   return "<p>Checked string: ".concat(
     searchTerm,
     "</p>",
@@ -45,9 +46,19 @@ function getResultHtml(searchTerm) {
     MAX_ALLOWED_LENGTH,
     "</p>",
     "<p>Is a valid string: ",
-    is_valid,
+    is_valid_html,
     "</p>",
   );
+}
+
+function getBoolHtml(bool) {
+    let color = "red";
+    let value = "false";
+    if (bool === true) {
+      color = "green";
+      value = "true";
+    }
+    return `<span font-weight:bold; style="color:${color};"> ${value} </span>`
 }
 
 function getErrorMessageToShow(error) {
