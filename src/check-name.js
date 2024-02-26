@@ -29,7 +29,7 @@ function run_input_query() {
 function getResultHtml(searchTerm) {
   const modified_string = get_string_modified_by_deploy_pipe(searchTerm);
   const is_valid = has_allowed_size(modified_string);
-  return "<p>Checking string: ".concat(
+  return "<p>Checked string: ".concat(
     searchTerm,
     "</p>",
     "<p>Lenght of the string: ",
@@ -38,7 +38,7 @@ function getResultHtml(searchTerm) {
     "<p>String modified by the deployment pipeline: ",
     modified_string,
     "</p>",
-    "<p>Lenght of the string modified: ",
+    "<p>Lenght of the modified string: ",
     modified_string.length,
     "</p>",
     "<p>Maximum allowed lenght: ",
@@ -55,11 +55,11 @@ function getErrorMessageToShow(error) {
 }
 
 function show_string_analysis(string) {
-  console.log(`Checking string: ${string}`);
+  console.log(`Checked string: ${string}`);
   console.log(`Lenght of the string: ${string.length}`);
   const modified_string = get_string_modified_by_deploy_pipe(string);
   console.log(`String modified by the deployment pipeline: ${modified_string}`);
-  console.log(`Lenght of the string modified: ${modified_string.length}`);
+  console.log(`Lenght of the modified string: ${modified_string.length}`);
   console.log(`Maximum allowed lenght: ${MAX_ALLOWED_LENGTH}`);
   const is_valid = has_allowed_size(modified_string);
   console.log(`Is a valid string: ${is_valid}`);
