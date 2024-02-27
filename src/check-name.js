@@ -1,4 +1,4 @@
-const MAX_ALLOWED_LENGTH = 86; // TODO use corret value
+const MAX_ALLOWED_LENGTH = 64;
 
 document.getElementById("search-button").onclick = function () {
   run_input_query();
@@ -77,8 +77,8 @@ function show_string_analysis(string) {
 }
 
 function get_string_modified_by_deploy_pipe(string) {
-  const PREFIX_ADDED = "Deploy-"; // TODO use corret value
-  const SUFFIX_ADDED = "-dev"; // TODO use corret value
+  const PREFIX_ADDED = "Service-lambda-";
+  const SUFFIX_ADDED = "-dev"; // It can be "-dev" or "-pro".
   return `${PREFIX_ADDED}${string}${SUFFIX_ADDED}`;
 }
 
