@@ -1,7 +1,7 @@
 /* Web site style */
 /*
-@import url("/tmp/common-sections.css");
 */
+@import url("/tmp/common-sections.css");
 @import url("../../../common-sections.css");
 
 /* https://github.com/duckduckgo/duckduckgo-styles/blob/master/icons/font/ddg-serp-icons.ttf */
@@ -41,6 +41,20 @@ a {
   color: var(--TAG-A-COLOR);
 }
 
+.validBlockResult {
+  background-color: #135e13;
+  border: 3px solid #072907;
+  border-radius: var(--BORDER-RADIUS);
+  text-align: center;
+}
+
+.wrongBlockResult {
+  background-color: #840404;
+  border: 3px solid #290707;
+  border-radius: var(--BORDER-RADIUS);
+  text-align: center;
+}
+
 .hidden {
   display: none;
 }
@@ -59,6 +73,17 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+.resultWrap {
+  position: relative;
+  width: 50%;
+  margin-top: 1px;
+  margin-top: var(--SEARCH-MARGIN-TOP);
+  margin-bottom: var(--SEARCH-MARGIN-BOTTOM);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .searchBar {
   background: var(--SEARCH-BACKGROUND);
