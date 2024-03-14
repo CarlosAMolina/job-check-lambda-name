@@ -30,7 +30,8 @@ function getResultHtml(searchTerm) {
   const modified_string = getStringModifiedByDeployPipe(searchTerm);
   const is_valid = hasAllowedSize(modified_string);
   const is_valid_html = getBoolHtml(is_valid);
-  return "<p>Checked string: ".concat(
+  return "".concat(
+    "<p>Checked string: ",
     searchTerm,
     "</p>",
     "<p>Length of the string: ",
