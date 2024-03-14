@@ -15,12 +15,17 @@ function runInputQuery() {
   try {
     document.getElementById("response-error-div").classList.add("hidden");
     document.getElementById("response-div").classList.remove("hidden");
+    document.getElementById("result-box-div").classList.remove("hidden");
+    document.getElementById("result-box-div").classList.add("validBlockResult");
+    document.getElementById("result-box-output").textContent =
+      "The string has a valid length";
     const html = getResultHtml(searchTerm);
     document.getElementById("search-result").innerHTML = html;
   } catch (error) {
     console.error(error);
     document.getElementById("response-div").classList.add("hidden");
     document.getElementById("response-error-div").classList.remove("hidden");
+    document.getElementById("result-box-div").classList.add("hidden");
     const errorMessage = getErrorMessageToShow(error);
     document.getElementById("error-output").textContent = errorMessage;
   }

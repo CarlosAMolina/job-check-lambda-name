@@ -39,7 +39,9 @@ a {
   color: var(--TAG-A-COLOR);
 }
 
-.blockResult, .validBlockResult, .wrongBlockResult {
+.blockResult,
+.validBlockResult,
+.wrongBlockResult {
   border-radius: var(--BORDER-RADIUS);
   text-align: center;
 }
@@ -63,7 +65,8 @@ a {
   font-size: 12px;
 }
 
-.searchWrap, .resultWrap {
+.searchWrap,
+.resultWrap {
   position: relative;
   width: 70%;
   margin-top: 1px;
