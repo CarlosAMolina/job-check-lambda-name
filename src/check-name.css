@@ -41,18 +41,19 @@ a {
   color: var(--TAG-A-COLOR);
 }
 
+.blockResult, .validBlockResult, .wrongBlockResult {
+  border-radius: var(--BORDER-RADIUS);
+  text-align: center;
+}
+
 .validBlockResult {
   background-color: #135e13;
   border: 3px solid #072907;
-  border-radius: var(--BORDER-RADIUS);
-  text-align: center;
 }
 
 .wrongBlockResult {
   background-color: #840404;
   border: 3px solid #290707;
-  border-radius: var(--BORDER-RADIUS);
-  text-align: center;
 }
 
 .hidden {
@@ -64,7 +65,7 @@ a {
   font-size: 12px;
 }
 
-.searchWrap {
+.searchWrap, .resultWrap {
   position: relative;
   width: 70%;
   margin-top: 1px;
@@ -75,13 +76,7 @@ a {
 }
 
 .resultWrap {
-  position: relative;
   width: 50%;
-  margin-top: 1px;
-  margin-top: var(--SEARCH-MARGIN-TOP);
-  margin-bottom: var(--SEARCH-MARGIN-BOTTOM);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .searchBar {
