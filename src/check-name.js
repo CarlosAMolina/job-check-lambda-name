@@ -31,6 +31,9 @@ function getResultHtml(searchTerm) {
   const is_valid = hasAllowedSize(modified_string);
   const is_valid_html = getBoolHtml(is_valid);
   return "".concat(
+    "<p>Is a valid string: ",
+    is_valid_html,
+    "</p>",
     "<p>Checked string: ",
     searchTerm,
     "</p>",
@@ -45,9 +48,6 @@ function getResultHtml(searchTerm) {
     "</p>",
     "<p>Maximum allowed length: ",
     MAX_ALLOWED_LENGTH,
-    "</p>",
-    "<p>Is a valid string: ",
-    is_valid_html,
     "</p>",
   );
 }
