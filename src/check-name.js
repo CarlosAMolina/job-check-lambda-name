@@ -17,13 +17,7 @@ function runInputQuery() {
     document.getElementById("result-box-div").classList.remove("hidden");
     if (searchTerm.length == 0) {
       document.getElementById("response-div").classList.add("hidden");
-      document
-        .getElementById("result-box-div")
-        .classList.remove("validBlockResult");
-      document
-        .getElementById("result-box-div")
-        .classList.add("wrongBlockResult");
-      document.getElementById("result-box-output").textContent = "Empty string";
+      setWrongBlockResult("Empty string");
     } else {
       document.getElementById("response-div").classList.remove("hidden");
       if (hasAllowedSize(getStringModifiedByDeployPipe(searchTerm))) {
@@ -36,14 +30,7 @@ function runInputQuery() {
         document.getElementById("result-box-output").textContent =
           "The string has a valid length";
       } else {
-        document
-          .getElementById("result-box-div")
-          .classList.remove("validBlockResult");
-        document
-          .getElementById("result-box-div")
-          .classList.add("wrongBlockResult");
-        document.getElementById("result-box-output").textContent =
-          "The string is too long";
+        setWrongBlockResult("The string is too long");
       }
       const html = getResultHtml(searchTerm);
       document.getElementById("search-result").innerHTML = html;
@@ -56,6 +43,14 @@ function runInputQuery() {
     const errorMessage = getErrorMessageToShow(error);
     document.getElementById("error-output").textContent = errorMessage;
   }
+}
+
+function setWrongBlockResult(text) {
+  document
+    .getElementById("result-box-div")
+    .classList.remove("validBlockResult");
+  document.getElementById("result-box-div").classList.add("wrongBlockResult");
+  document.getElementById("result-box-output").textContent = text;
 }
 
 function getResultHtml(searchTerm) {
