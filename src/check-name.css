@@ -39,16 +39,12 @@ a {
   color: var(--TAG-A-COLOR);
 }
 
-.blockResult,
 .validBlockResult,
 .wrongBlockResult {
-  border-radius: var(--BORDER-RADIUS);
-  text-align: center;
-}
-
-.validBlockResult {
   background-color: #135e13;
   border: 3px solid #072907;
+  border-radius: var(--BORDER-RADIUS);
+  text-align: center;
 }
 
 .wrongBlockResult {
