@@ -65,7 +65,6 @@ a {
 .resultWrap {
   position: relative;
   width: 70%;
-  margin-top: 1px;
   margin-top: var(--SEARCH-MARGIN-TOP);
   margin-bottom: var(--SEARCH-MARGIN-BOTTOM);
   margin-left: auto;
