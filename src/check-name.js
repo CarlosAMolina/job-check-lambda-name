@@ -53,13 +53,13 @@ function getResultHtml(searchTerm) {
 }
 
 function getBoolHtml(bool) {
-    let color = "red";
-    let value = "false";
-    if (bool === true) {
-      color = "green";
-      value = "true";
-    }
-    return `<span font-weight:bold; style="color:${color};"> ${value} </span>`
+  let color = "red";
+  let value = "false";
+  if (bool === true) {
+    color = "green";
+    value = "true";
+  }
+  return `<span font-weight:bold; style="color:${color};"> ${value} </span>`;
 }
 
 function getErrorMessageToShow(error) {
