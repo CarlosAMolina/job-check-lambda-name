@@ -14,29 +14,40 @@ function runInputQuery() {
   const searchTerm = document.getElementById("search-input").value;
   try {
     document.getElementById("response-error-div").classList.add("hidden");
-    document.getElementById("response-div").classList.remove("hidden");
     document.getElementById("result-box-div").classList.remove("hidden");
-    if (hasAllowedSize(getStringModifiedByDeployPipe(searchTerm))) {
-      document
-        .getElementById("result-box-div")
-        .classList.remove("wrongBlockResult");
-      document
-        .getElementById("result-box-div")
-        .classList.add("validBlockResult");
-      document.getElementById("result-box-output").textContent =
-        "The string has a valid length";
-    } else {
+    if (searchTerm.length == 0) {
+      document.getElementById("response-div").classList.add("hidden");
       document
         .getElementById("result-box-div")
         .classList.remove("validBlockResult");
       document
         .getElementById("result-box-div")
         .classList.add("wrongBlockResult");
-      document.getElementById("result-box-output").textContent =
-        "The string is too long";
+      document.getElementById("result-box-output").textContent = "Empty string";
+    } else {
+      document.getElementById("response-div").classList.remove("hidden");
+      if (hasAllowedSize(getStringModifiedByDeployPipe(searchTerm))) {
+        document
+          .getElementById("result-box-div")
+          .classList.remove("wrongBlockResult");
+        document
+          .getElementById("result-box-div")
+          .classList.add("validBlockResult");
+        document.getElementById("result-box-output").textContent =
+          "The string has a valid length";
+      } else {
+        document
+          .getElementById("result-box-div")
+          .classList.remove("validBlockResult");
+        document
+          .getElementById("result-box-div")
+          .classList.add("wrongBlockResult");
+        document.getElementById("result-box-output").textContent =
+          "The string is too long";
+      }
+      const html = getResultHtml(searchTerm);
+      document.getElementById("search-result").innerHTML = html;
     }
-    const html = getResultHtml(searchTerm);
-    document.getElementById("search-result").innerHTML = html;
   } catch (error) {
     console.error(error);
     document.getElementById("response-div").classList.add("hidden");
