@@ -1,6 +1,6 @@
 /* Web site style */
 /*@import url("/tmp/common-sections.css"); */ /* Local testing */
-@import url("../../../common-sections.css");
+@import url("../../../base.css");
 
 /* https://github.com/duckduckgo/duckduckgo-styles/blob/master/icons/font/ddg-serp-icons.ttf */
 @font-face {
